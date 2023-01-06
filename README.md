@@ -67,3 +67,53 @@ Added `yarn.lock` to `.gitignore` since I don't care about it for just this lear
 
 Note how the root "layout.tsx" (`src/routes/layout.tsx`) wraps or "lays out" the content in `index.mdx`.
 
+## state-changes
+
+This time I used the documentation starter app.
+
+```
+yarn create qwik
+🐰 Let's create a Qwik app 🐇   v0.16.2
+
+✔ Where would you like to create your new project? … ./state-changes
+
+✔ Select a starter › Documentation site (QwikCity)
+
+✔ Would you like to install yarn dependencies? … yes
+
+✔ Installing yarn dependencies...
+
+
+🦄  Success!  Project created in state-changes directory
+
+🐰 Next steps:
+   cd state-changes
+   yarn start
+
+🔌 Integrations? Add Netlify, Cloudflare, Tailwind...
+   yarn qwik add
+
+📚 Relevant docs:
+   https://qwik.builder.io/docs/getting-started/
+
+💬 Questions? Start the conversation at:
+   https://qwik.builder.io/chat
+   https://twitter.com/QwikDev
+
+📺 Presentations, Podcasts and Videos:
+   https://qwik.builder.io/media/
+
+Done in 34.72s.
+$ 
+```
+
+This example has some nice things to learn in it. In order to create the "state-changes" example, I took the solution here:
+https://qwik.builder.io/tutorial/introduction/listeners/
+(be sure to click "show me" button if the event listener code isn't there).
+
+And then:
+- created `src/routes/state-changes` folder
+- added the aforementioned code to the file `index.tsx` in that folder
+- then in browser, go to `http://localhost:5173/state-changes/`
+- to see the listener in action, just start typing into the username text field
+
