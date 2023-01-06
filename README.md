@@ -54,8 +54,6 @@ Note that is uses "vite":
   ➜  press h to show help
 ```
 
-### Modifications to Play
-
 **Change #1**
 Added `yarn.lock` to `.gitignore` since I don't care about it for just this learning experience.
 
