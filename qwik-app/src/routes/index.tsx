@@ -55,6 +55,16 @@ export default component$(() => {
       <table class="commands">
         <tr>
           <td>
+            <code>npm run qwik add azure-swa</code>
+          </td>
+          <td>
+            <a href="https://learn.microsoft.com/azure/static-web-apps/overview" target="_blank">
+              Azure Static Web Apps
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td>
             <code>npm run qwik add cloudflare-pages</code>
           </td>
           <td>
@@ -85,7 +95,7 @@ export default component$(() => {
         </tr>
         <tr>
           <td>
-            <code>npm run qwik add static-node</code>
+            <code>npm run qwik add static</code>
           </td>
           <td>
             <a
@@ -117,7 +127,7 @@ export default component$(() => {
         <li>
           <span>Open issues and contribute on </span>
           <a href="https://github.com/BuilderIO/qwik" target="_blank">
-            Github
+            GitHub
           </a>
         </li>
         <li>
@@ -127,7 +137,7 @@ export default component$(() => {
           </a>
         </li>
       </ul>
-      <Link class="mindblow" href="/flower">
+      <Link class="mindblow" href="/flower/">
         Blow my mind 🤯
       </Link>
     </div>
@@ -136,4 +146,10 @@ export default component$(() => {
 
 export const head: DocumentHead = {
   title: 'Welcome to Qwik',
+  meta: [
+    {
+      name: 'description',
+      content: 'Qwik site description',
+    },
+  ],
 };
