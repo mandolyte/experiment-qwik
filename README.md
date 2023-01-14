@@ -123,3 +123,10 @@ So I can use this folder to begin a new project. Of course, if you want a header
 
 To run: `yarn && yarn start`
 
+# To Do
+
+- Add a header back in to min setup (but keep it separate)
+- New app that shows two text areas, one for input and one for output
+  - The input window is where you enter djot markdown
+  - The output window renders the input as html
+- A fetch data example, perhaps with a uw-editor as an "output window" to view USFM data
