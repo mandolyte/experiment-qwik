@@ -127,7 +127,10 @@ To run: `yarn && yarn start`
 
 1. copied min-qwik-city
 2. renamed to renderDjot
-3. 
+3. to run, `yarn && yarn start`
+4. in the text box, enter djot markup
+5. The markup will be rendered as you type in html
+6. Also the raw html generated is also shown.
 
 A hint from QC Discord [here](https://discord.com/channels/842438759945601056/1064032314247626822)
 
