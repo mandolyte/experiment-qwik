@@ -64,3 +64,16 @@ code {
   font-size: 0.9em;
   border-bottom: 2px solid #bfbfbf;
 }
+
+.verse {
+  vertical-align: super;
+  font-weight: bolder;
+}
+.book {
+  color: red;
+}
+
+.heading {
+  color: blue;
+  font-style: italic;
+}

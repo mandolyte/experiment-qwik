@@ -11,7 +11,7 @@ export default component$(() => {
     <div>
 
       <div>
-        <span style='color: red'>Enter Djot Markup:</span>
+        <h1 style='color: red'>Enter Djot Markup:</h1>
       </div>
         <textarea onInput$={(e) => {
           if (previewRef.value) {
@@ -22,12 +22,12 @@ export default component$(() => {
         />
 
       <div>
-        <span style='color: red'>Rendered Djot Markup:</span>
+        <h1 style='color: red'>Rendered Djot Markup:</h1>
       </div>
       <div ref={previewRef} />
 
       <div>
-        <span style='color: red'>Raw HTML:</span>
+        <h1 style='color: red'>Raw HTML:</h1>
       </div>
       <div>
         {data.html}
