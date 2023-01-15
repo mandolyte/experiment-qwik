@@ -129,6 +129,8 @@ To run: `yarn && yarn start`
 2. renamed to renderDjot
 3. 
 
+A hint from QC Discord [here](https://discord.com/channels/842438759945601056/1064032314247626822)
+
 # To Do
 
 - Add a header back in to min setup (but keep it separate)
