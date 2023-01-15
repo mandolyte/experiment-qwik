@@ -117,11 +117,17 @@ And then:
 
 ## min-qwik-city
 
-In the "renderDjot" folder, I copied the code from "state-changes". I then overwrote the main index.js file with by state changes "tsx" file. Next I began removing everything else. In the end, this is what was left.
+In the "min-qwik-city" folder, I copied the code from "state-changes". I then overwrote the main index.js file with by state changes "tsx" file. Next I began removing everything else. In the end, this is what was left.
 
 So I can use this folder to begin a new project. Of course, if you want a header and footer, you start adding back in the content needed from the state-changes folder that I started with.
 
 To run: `yarn && yarn start`
+
+## renderDjot
+
+1. copied min-qwik-city
+2. renamed to renderDjot
+3. 
 
 # To Do
 
