@@ -38,3 +38,5 @@ export const Child = component$(() => {
     </>
   );
 });
+
+export default Parent;

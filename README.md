@@ -4,6 +4,8 @@ This README captures some notes about each of the folders.
 
 This repo had some older examples, which I have simply removed and started all over.
 
+Useful to create a new project for demo or sharing: https://qwik.new/
+
 ## qwik-app (basic starter)
 
 ```
@@ -165,6 +167,9 @@ This folder explores the context API. Steps:
 1. copied folder min-qwik-city and renamed to `context`
 2. replaced `/src/routes/index.tsx` with example from [here](https://qwik.builder.io/docs/components/context/)
 3. test first by running `yarn && yarn start`
+4. Had to add an interface for the object (this is a ts file!)
+5. Had to add "export default Parent;" at the end of the file
+6. Now works.
 
 # To Do
 
