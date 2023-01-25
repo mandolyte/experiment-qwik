@@ -6,12 +6,16 @@ import {
   createContext,
 } from '@builder.io/qwik';
 
+interface stateIF {
+  count: number;
+}
+
 // Create a new context descriptor
-export const MyContext = createContext('my-context');
+export const MyContext = createContext<stateIF>('my-context');
 
 export const Parent = component$(() => {
   // Create some reactive storage
-  const state = useStore({
+  const state = useStore<stateIF>({
     count: 0,
   });
 
@@ -27,7 +31,7 @@ export const Parent = component$(() => {
 
 export const Child = component$(() => {
   // Get reference to state using MyContext
-  const state = useContext(MyContext);
+  const state = useContext<stateIF>(MyContext);
   return (
     <>
       <button onClick$={() => state.count++}>Increment</button>
