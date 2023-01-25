@@ -1,10 +1,11 @@
 import {
   component$,
   useStore,
-  useContext,
   useContextProvider,
   createContext,
 } from '@builder.io/qwik';
+
+import { Child } from './child'
 
 interface stateIF {
   count: number;
@@ -29,14 +30,5 @@ export const Parent = component$(() => {
   );
 });
 
-export const Child = component$(() => {
-  // Get reference to state using MyContext
-  const state = useContext<stateIF>(MyContext);
-  return (
-    <>
-      <button onClick$={() => state.count++}>Increment</button>
-    </>
-  );
-});
 
 export default Parent;
