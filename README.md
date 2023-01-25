@@ -157,6 +157,15 @@ A hint from QC Discord [here](https://discord.com/channels/842438759945601056/10
 14. So modified the click actions as per example (adding "host:" as namespace to `onClick$`)
 15. Now all works!!
 
+
+## Context
+
+This folder explores the context API. Steps:
+
+1. copied folder min-qwik-city and renamed to `context`
+2. replaced `/src/routes/index.tsx` with example from [here](https://qwik.builder.io/docs/components/context/)
+3. test first by running `yarn && yarn start`
+
 # To Do
 
 - Add a header back in to min setup (but keep it separate)
