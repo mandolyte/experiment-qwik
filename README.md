@@ -170,6 +170,8 @@ This folder explores the context API. Steps:
 4. Had to add an interface for the object (this is a ts file!)
 5. Had to add "export default Parent;" at the end of the file
 6. Now works.
+7. Next I split out the parts used in both parent and child into `src/components/commont.ts`
+8. Required a bit of work to make it work, such as adding a default export, tweaking the imports, etc.
 
 # To Do
 

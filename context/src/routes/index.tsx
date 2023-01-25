@@ -2,17 +2,13 @@ import {
   component$,
   useStore,
   useContextProvider,
-  createContext,
 } from '@builder.io/qwik';
 
-import { Child } from './child'
+import type {stateIF} from '../components/common';
+import MyContext from '../components/common';
 
-interface stateIF {
-  count: number;
-}
+import { Child } from './child';
 
-// Create a new context descriptor
-export const MyContext = createContext<stateIF>('my-context');
 
 export const Parent = component$(() => {
   // Create some reactive storage
