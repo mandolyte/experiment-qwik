@@ -187,6 +187,17 @@ Code(3): Only primitive and object literals can be serialized
 19 |      count: 0,
 20 |      increment: addOne,
 ```
+- Also, I created a route that was **not** a descendent of "Parent" (see `not-child`) and it fails as expected:
+```
+Code(13): Actual value for useContext() can not be found, make sure some ancestor component has set a value using useContextProvider()
+/home/cecil/Projects/github.com/mandolyte/experiment-qwik/context/src/routes/not-child/index.tsx:11:16
+9  |  export const NotChild = component$(() => {
+10 |    // Get reference to state using MyContext
+11 |    const state = useContext<stateIF>(MyContext);
+   |                 ^
+12 |    return (
+13 |      <>
+```
 
 # To Do
 
