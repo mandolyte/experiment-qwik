@@ -173,6 +173,21 @@ This folder explores the context API. Steps:
 7. Next I split out the parts used in both parent and child into `src/components/commont.ts`
 8. Required a bit of work to make it work, such as adding a default export, tweaking the imports, etc.
 
+Notes:
+- The Parent component is the ancestor of the Child component
+- And is where the "useContextProvider" is used.
+- Very important: qwik Context **cannot** be used to pass functions around. In some of the react apps I have worked with we pass state and actions in the context, where actions are functions to set the state. So the functions needed to update the state will need to be made available in a different fashion. Here is the error:
+```
+Code(3): Only primitive and object literals can be serialized
+/home/cecil/Projects/github.com/mandolyte/experiment-qwik/context/src/routes/index.tsx:18:16
+16 |  export const Parent = component$(() => {
+17 |    // Create some reactive storage
+18 |    const state = useStore<stateIF>({
+   |              ^
+19 |      count: 0,
+20 |      increment: addOne,
+```
+
 # To Do
 
 - Add a header back in to min setup (but keep it separate)
