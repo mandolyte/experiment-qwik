@@ -198,6 +198,7 @@ Code(13): Actual value for useContext() can not be found, make sure some ancesto
 12 |    return (
 13 |      <>
 ```
+- Finally added a "global" context example, but creating it in `root.tsx`. See route "global-child".
 
 # To Do
 
