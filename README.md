@@ -200,6 +200,17 @@ Code(13): Actual value for useContext() can not be found, make sure some ancesto
 ```
 - Finally added a "global" context example, but creating it in `root.tsx`. See route "global-child".
 
+## Loader
+
+This folder will explore using the new loader$ feature. The docs are [here](https://qwik.builder.io/qwikcity/loader/#loader). To quote:
+> Loaders allow data to flow from the server to the Qwik Components. For this reason, Qwik Loaders should be always understood in the context of loading data in the server that is later consumed by a Qwik Component... 
+
+1. created the "loader" folder by copying the "min-qwik-city"
+2. used `yarn && yarn start` to make sure it works before making any changes
+3. 
+
+
+
 # To Do
 
 - Add a header back in to min setup (but keep it separate)
