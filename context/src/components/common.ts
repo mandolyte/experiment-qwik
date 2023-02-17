@@ -1,6 +1,6 @@
 
 import {
-    createContext,
+    createContextId,
 } from '@builder.io/qwik';
   
 // this is "data model" for the app
@@ -10,6 +10,6 @@ export interface stateIF {
 }
   
 // Create a new context descriptor
-export const GlobalContext = createContext<stateIF>('global-context');
+export const GlobalContext = createContextId<stateIF>('global-context');
 
 export default GlobalContext;
