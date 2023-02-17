@@ -3,12 +3,13 @@ import {
     createContext,
 } from '@builder.io/qwik';
   
+// this is "data model" for the app
 export interface stateIF {
     count: number;
+    text: string;
 }
   
 // Create a new context descriptor
-export const MyContext = createContext<stateIF>('my-context');
-export const GlobalContext = createContext('global-context');
+export const GlobalContext = createContext<stateIF>('global-context');
 
-export default MyContext;
+export default GlobalContext;

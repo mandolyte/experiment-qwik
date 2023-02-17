@@ -4,7 +4,8 @@ import { component$, useStore,
  } from '@builder.io/qwik';
 import { QwikCityProvider, RouterOutlet, ServiceWorkerRegister } from '@builder.io/qwik-city';
 import { RouterHead } from './components/router-head/router-head';
-import { GlobalContext } from './components/common';
+import GlobalContext from './components/common';
+import type { stateIF } from './components/common';
 
 import './global.css';
 
@@ -16,8 +17,9 @@ export default component$(() => {
    * Dont remove the `<head>` and `<body>` elements.
    */
   
-  const tstate = useStore({
-    text: 'this is some global text!',
+  const tstate = useStore<stateIF>({
+    count: 0,
+    text: 'this is text from root.tsx',
   });
   // const GlobalContext = createContext('global-context');
   useContextProvider(GlobalContext, tstate);

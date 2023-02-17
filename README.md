@@ -207,7 +207,8 @@ This folder will explore using the new loader$ feature. The docs are [here](http
 
 1. created the "loader" folder by copying the "min-qwik-city"
 2. used `yarn && yarn start` to make sure it works before making any changes
-3. 
+3. upgraded qwik packages and vite packages
+4. 
 
 
 

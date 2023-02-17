@@ -1,16 +1,14 @@
 import {
   component$,
-  useStore,
-  useContextProvider,
-  useClientEffect$,
-  noSerialize,
-  useSignal,
+  useContext,
+  // useClientEffect$,
+  // noSerialize,
+  // useSignal,
 } from '@builder.io/qwik';
 
 import type {stateIF} from '../components/common';
-import MyContext from '../components/common';
+import GlobalContext from '../components/common';
 
-import { Child } from './child';
 
 export function logger(arg:number): void {
   console.log("Value of count is:",arg)
@@ -18,23 +16,17 @@ export function logger(arg:number): void {
 
 export const Parent = component$(() => {
   // Create some reactive storage
-  const state = useStore<stateIF>({
-    count: 0,
-  });
-
-  const fstate = useSignal<typeof logger|null>(null)
-
-  useClientEffect$(() => {
-    fstate.value = noSerialize(logger);
-  });
+  // const state = useStore<stateIF>({
+  //   count: 0,
+  //   text: "some text for useStore() init"
+  // });
 
   // Assign value (state) to the context (MyContext)
-  useContextProvider(MyContext, state);
+  const state = useContext<stateIF>(GlobalContext);
   return (
     <>
-      <Child />
       <div>Count: {state.count}</div>
-      <div><button onClick$={() => fstate.value(state.count)}>Log value to console</button></div>
+      <div>Text: {state.text}</div>
     </>
   );
 });
