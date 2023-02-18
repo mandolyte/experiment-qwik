@@ -1,7 +1,8 @@
 import {
     component$,
     useContext,
-  } from '@builder.io/qwik';
+} from '@builder.io/qwik';
+import { Link } from '@builder.io/qwik-city';
 
 import {GlobalContext} from '../../components/common';
   
@@ -15,6 +16,17 @@ export const Child2 = component$(() => {
       <button onClick$={() => tstate.count++}>Increment</button>
       <button onClick$={() => tstate.text = "text from child2"}>Set text to be from child2</button>
       
+      <div>
+        <Link href="/">
+              Home
+        </Link>
+      </div>
+      <div>
+        <Link href="/child1/">
+            Child 1
+        </Link>
+      </div>
+
     </>
   );
 });

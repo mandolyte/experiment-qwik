@@ -1,10 +1,13 @@
 import {
   component$,
   useContext,
+
   // useClientEffect$,
   // noSerialize,
   // useSignal,
 } from '@builder.io/qwik';
+import { Link } from '@builder.io/qwik-city';
+
 
 import type {stateIF} from '../components/common';
 import GlobalContext from '../components/common';
@@ -27,6 +30,16 @@ export const Parent = component$(() => {
     <>
       <div>Count: {state.count}</div>
       <div>Text: {state.text}</div>
+      <div>
+        <Link href="/child1/">
+          Child 1 
+        </Link>
+      </div>
+      <div>
+        <Link href="/child2/">
+          Child 2 
+        </Link>
+      </div>
     </>
   );
 });
