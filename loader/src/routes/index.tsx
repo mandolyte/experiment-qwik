@@ -6,7 +6,7 @@ export const useProperNamesDb = loader$( async () => {
   console.log("Enter loader$")
   let dbfile: ArrayBuffer;
   let sizeOfDb = 0;
-  let start = Date.now();
+  const start = Date.now();
   let end = Date.now();
   let elapsed = 0;
   // https://github.com/mandolyte/learnathon-2023/raw/main/properNames.db
