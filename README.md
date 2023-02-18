@@ -174,7 +174,8 @@ This folder explores the context API. Steps:
 8. Required a bit of work to make it work, such as adding a default export, tweaking the imports, etc.
 
 Notes:
-- The Parent component is the ancestor of the Child component
+- The `root.tsx` is where the context is intialized and thus is the ancestor of the child components. 
+- *Important*: the main page must either reference the child components directly or via `Link`s to the child pages. Unless this is done, the data in the child components is copied from root on each render.
 - And is where the "useContextProvider" is used.
 - Very important: qwik Context **cannot** be used to pass functions around. In some of the react apps I have worked with we pass state and actions in the context, where actions are functions to set the state. So the functions needed to update the state will need to be made available in a different fashion. Here is the error:
 ```
@@ -187,18 +188,6 @@ Code(3): Only primitive and object literals can be serialized
 19 |      count: 0,
 20 |      increment: addOne,
 ```
-- Also, I created a route that was **not** a descendent of "Parent" (see `not-child`) and it fails as expected:
-```
-Code(13): Actual value for useContext() can not be found, make sure some ancestor component has set a value using useContextProvider()
-/home/cecil/Projects/github.com/mandolyte/experiment-qwik/context/src/routes/not-child/index.tsx:11:16
-9  |  export const NotChild = component$(() => {
-10 |    // Get reference to state using MyContext
-11 |    const state = useContext<stateIF>(MyContext);
-   |                 ^
-12 |    return (
-13 |      <>
-```
-- Finally added a "global" context example, but creating it in `root.tsx`. See route "global-child".
 
 ## Loader
 
@@ -208,7 +197,9 @@ This folder will explore using the new loader$ feature. The docs are [here](http
 1. created the "loader" folder by copying the "min-qwik-city"
 2. used `yarn && yarn start` to make sure it works before making any changes
 3. upgraded qwik packages and vite packages
-4. 
+4. had to use `async` for the fetch function to be sure things work in order
+5. it simple shows the size of database file that is fetched.
+6. shows this on the server side, the html side, and when the component is viewable (in console log)
 
 
 
