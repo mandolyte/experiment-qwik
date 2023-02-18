@@ -5,7 +5,10 @@ export const useProperNamesDb = loader$( async () => {
   // fetch a db file
   console.log("Enter loader$")
   let dbfile: ArrayBuffer;
-  let sizeOfDb: number;
+  let sizeOfDb = 0;
+  let start = Date.now();
+  let end = Date.now();
+  let elapsed = 0;
   // https://github.com/mandolyte/learnathon-2023/raw/main/properNames.db
   await fetch('https://github.com/mandolyte/learnathon-2023/raw/main/properNames.db')
   .then((response) => {
@@ -15,6 +18,8 @@ export const useProperNamesDb = loader$( async () => {
     return response.arrayBuffer();
   })
   .then((myBuffer) => {
+    end = Date.now();
+    elapsed = end - start;
     console.log("myBuffer size is:", myBuffer.byteLength)
     dbfile = myBuffer
     sizeOfDb = dbfile.byteLength;
@@ -25,6 +30,7 @@ export const useProperNamesDb = loader$( async () => {
 
   return {
     size: sizeOfDb,
+    duration: elapsed,
   }
 });
 
@@ -42,7 +48,7 @@ export default component$(() => {
 
   return (
     <div>
-      Database size: {signal.value.size}
+      Database size: {signal.value.size} in {signal.value.duration / 1000} seconds
     </div>
   );
 });
