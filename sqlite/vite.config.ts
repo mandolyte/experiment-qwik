@@ -11,5 +11,10 @@ export default defineConfig(() => {
         'Cache-Control': 'public, max-age=600',
       },
     },
+    build: { target: ['es2020'], }, // Needed in `sqlite-wasm-esm` for big-ints to work
+    optimizeDeps: {
+      exclude: ['sqlite-wasm-esm'], // TODO remove once fixed https://github.com/vitejs/vite/issues/8427
+      esbuildOptions: { target: 'es2020' }, // Needed in `sqlite-wasm-esm` for big-ints to work
+    }
   };
 });
