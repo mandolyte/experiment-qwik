@@ -1,19 +1,40 @@
-import { component$, useBrowserVisibleTask$, useSignal } from '@builder.io/qwik';
+import { component$, 
+  useBrowserVisibleTask$, 
+  useSignal, 
+  useStore, 
+  useTask$, 
+  noSerialize,
+} from '@builder.io/qwik';
 import sqlite3InitModule from "sqlite-wasm-esm";
 
 
 export default component$(() => {
   const lines = useSignal("")
- 
+  const store = useStore({
+    db: null as any|null,
+  });
+
   useBrowserVisibleTask$(async () => {
-    const log = (msg:string) => {
-      lines.value = lines.value + msg
-    }
-      const sqliteDB = await sqlite3InitModule().then((sqlite3) => {
+    const sqliteDB = await sqlite3InitModule().then((sqlite3) => {
       //const opfsDb = new sqlite3.opfs.OpfsDb("my-db", "c");
       // or in-memory ...
       const db = new sqlite3.oo1.DB();
+      store.db = noSerialize(db);
       console.log("sqlite3 instance created:",sqlite3);
+      console.log("DB instance created is:", db)  
+      return db;
+    });
+    console.log("sqliteDB:", sqliteDB);
+  });
+
+  useTask$(({ track }) => {
+    // rerun this function  when `value` property changes.
+    track(() => store.db);
+    const log = (msg:string) => {
+      lines.value = lines.value + msg
+    }
+    if ( store.db !== null ) {
+      const db = store.db
       try {
         log("Create a table...\n");
         db.exec("CREATE TABLE IF NOT EXISTS t(a,b)");
@@ -59,13 +80,8 @@ export default component$(() => {
         console.log("error is:", e)
         throw e
       }
-
-  
-      return db;
-    });
-    console.log("sqliteDB:", sqliteDB);
+    }
   });
-
   return (
     <div>
       <h1>Start of the Sqlite Experiment</h1>
