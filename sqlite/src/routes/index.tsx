@@ -63,13 +63,14 @@ export default component$(() => {
           });
         }    
         log("Query data with exec() without a callback...\n");
-        let resultRows = [];
+        // eslint-disable-next-line prefer-const
+        let rows :any[] = [];
         db.exec({
           sql: "select a, b from t order by a limit 3",
           rowMode: 'object',
-          resultRows: resultRows
+          resultRows: rows,
         });
-        log("Result rows:\n"+JSON.stringify(resultRows,null,2));
+        log("Result rows:\n"+JSON.stringify(rows,null,2));
       }catch(e){
         // if(e instanceof sqlite3.SQLite3Error){
         //   log("Got expected exception from db.transaction():",e.message);
